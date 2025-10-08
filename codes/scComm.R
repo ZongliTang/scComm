@@ -1,4 +1,4 @@
-elibrary(entropy)
+library(entropy)
 library(Seurat)
 library(pracma)
 library(RcppML)
@@ -413,7 +413,7 @@ MakeAugmentedData <- function(expr, scCommRes, lr_database = "scriabin_LR_OmniPa
     PositiveData = AugmentedData
 
     ### Data Augmentation for NegativeData
-    NegativeData <- matrix(0, nrow = 2000, ncol = length(LRpairs_str)).
+    NegativeData <- matrix(0, nrow = 2000, ncol = length(LRpairs_str))
     rownames(NegativeData) <- paste0('Negative_', 1:2000)
     colnames(NegativeData) <- LRpairs_str
     progress <- progress_bar$new(total = length(lr_network$from), clear = F)
